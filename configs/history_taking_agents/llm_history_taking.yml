@@ -1,0 +1,9 @@
+class_name: "ddxdriver.history_taking_agents.llm_history_taking.LLMHistoryTaking"
+config:
+  max_questions: 10
+  
+  # Model hyperparameters
+  model:
+    class_name: ddxdriver.models.oai_chat.OpenAIChat  #["oai_azure_chat.OpenAIAzureChat", "oai_chat.OpenAIChat", "llama3_instruct.Llama3Instruct", "llama31_8b.Llama318B"]
+    config:
+      model_name: "gpt-4o"  # ["gpt-4o", "llama31instruct", "meta-llama/Meta-Llama-3.1-8B-Instruct"]

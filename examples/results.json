@@ -1,0 +1,89 @@
+{
+    "Percent Successful Examples": 1.0,
+    "Average Metrics": {
+        "GTPA@1": 0.5,
+        "GTPA@3": 1.0,
+        "GTPA@5": 1.0,
+        "GTPA@10": 1.0,
+        "Average Rank": 1.5,
+        "DDR": 0.7,
+        "DDP": 0.7,
+        "DDF1": 0.64
+    },
+    "Average Intermediate Metrics": {
+        "Progress": [
+            [],
+            []
+        ],
+        "Average Progress": 0.0
+    },
+    "Results": [
+        {
+            "patient": {
+                "patient_id": 233,
+                "patient_initial_info": "Age: 41\nSex: F\nChief Complaint: nasal congestion",
+                "gt_pathology": "Allergic sinusitis",
+                "patient_profile": "- Age: 41\n- Sex: F\n- Nasal congestion\n- Cough\n- Breathing difficulties\n- History of allergies\n- Family history of allergies, hay fever, or eczema\n- Severe itching in eyes\n- Clear runny nose",
+                "gt_ddx": [
+                    "Bronchitis",
+                    "URTI",
+                    "Allergic sinusitis"
+                ]
+            },
+            "ddx_fixed_length": null,
+            "final_ddx_prediction": [
+                "Allergic sinusitis",
+                "Bronchospasm / acute asthma exacerbation",
+                "Chronic rhinosinusitis",
+                "Bronchitis",
+                "URTI"
+            ],
+            "intermediate_ddx_predictions": [
+                [
+                    "Allergic sinusitis",
+                    "Bronchospasm / acute asthma exacerbation",
+                    "Chronic rhinosinusitis",
+                    "Bronchitis",
+                    "URTI"
+                ]
+            ]
+        },
+        {
+            "patient": {
+                "patient_id": 478,
+                "patient_initial_info": "Age: 37\nSex: M\nChief Complaint: pain",
+                "gt_pathology": "Bronchitis",
+                "patient_profile": "- Age: 37\n- Sex: M\n- Chief Complaint: Pain\n- Pain is sensitive and located on the right side of the chest, pharynx, right breast, and both right and left posterior chest wall\n- Cough with colored sputum\n- Chronic obstructive pulmonary disease (COPD)",
+                "gt_ddx": [
+                    "Bronchitis",
+                    "Pneumonia",
+                    "Bronchiectasis",
+                    "Spontaneous rib fracture",
+                    "Acute laryngitis",
+                    "Possible NSTEMI / STEMI",
+                    "Viral pharyngitis",
+                    "Unstable angina",
+                    "Pericarditis",
+                    "Stable angina"
+                ]
+            },
+            "ddx_fixed_length": null,
+            "final_ddx_prediction": [
+                "Acute COPD exacerbation / infection",
+                "Bronchitis",
+                "Pneumonia",
+                "Bronchiectasis",
+                "Viral pharyngitis"
+            ],
+            "intermediate_ddx_predictions": [
+                [
+                    "Acute COPD exacerbation / infection",
+                    "Bronchitis",
+                    "Pneumonia",
+                    "Bronchiectasis",
+                    "Viral pharyngitis"
+                ]
+            ]
+        }
+    ]
+}

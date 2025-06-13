@@ -1,0 +1,11 @@
+class_name: "ddxdriver.ddxdrivers.fixed_choice.FixedChoice"
+config:
+  agent_prompt_length: 10            # 0 if no instructions, otherwise a positive number
+  agent_order: ["history_taking", "rag", "diagnosis"]  #List subset of ["history_taking", "rag", "diagnosis"], this is used for the order
+  iterations: 1 
+  only_patient_initial_information: False
+  
+  model:
+    class_name: ddxdriver.models.oai_chat.OpenAIChat  #["oai_azure_chat.OpenAIAzureChat", "oai_chat.OpenAIChat", "llama3_instruct.Llama3Instruct", "llama31_8b.Llama318B"]
+    config:
+      model_name: "gpt-4o"  # ["gpt-4o", "llama31instruct", "meta-llama/Meta-Llama-3.1-8B-Instruct"]

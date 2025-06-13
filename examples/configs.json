@@ -1,0 +1,87 @@
+{
+    "ddxdriver_cfg": {
+        "class_name": "ddxdriver.ddxdrivers.fixed_choice.FixedChoice",
+        "config": {
+            "agent_prompt_length": 10,
+            "model": {
+                "class_name": "ddxdriver.models.oai_chat.OpenAIChat",
+                "config": {
+                    "model_name": "gpt-4o"
+                }
+            },
+            "agent_order": [
+                "history_taking",
+                "rag",
+                "diagnosis"
+            ],
+            "iterations": 1
+        }
+    },
+    "bench_cfg": {
+        "num_patients": 2,
+        "enforce_diagnosis_options": true,
+        "class_name": "ddxdriver.benchmarks.ddxplus.DDxPlus",
+        "config": {
+            "knn_search_cfg": {
+                "embedding_model": "BAAI/bge-base-en-v1.5",
+                "pooling": "average",
+                "order": "similar_at_top",
+                "precompute_new_embeddings": false
+            }
+        }
+    },
+    "diagnosis_cfg": {
+        "class_name": "ddxdriver.diagnosis_agents.single_llm_standard.SingleLLMStandard",
+        "config": {
+            "model": {
+                "class_name": "ddxdriver.models.oai_chat.OpenAIChat",
+                "config": {
+                    "model_name": "gpt-4o"
+                }
+            },
+            "fewshot": {
+                "type": "dynamic",
+                "num_shots": 5,
+                "embedding_model": "BAAI/bge-base-en-v1.5",
+                "self_generated_fewshot_cot": false
+            }
+        }
+    },
+    "history_taking_cfg": {
+        "class_name": "ddxdriver.history_taking_agents.llm_history_taking.LLMHistoryTaking",
+        "config": {
+            "max_questions": 5,
+            "model": {
+                "class_name": "ddxdriver.models.oai_chat.OpenAIChat",
+                "config": {
+                    "model_name": "gpt-4o"
+                }
+            }
+        }
+    },
+    "patient_cfg": {
+        "class_name": "ddxdriver.patient_agents.llm_patient.LLMPatient",
+        "config": {
+            "model": {
+                "class_name": "ddxdriver.models.oai_chat.OpenAIChat",
+                "config": {
+                    "model_name": "gpt-4o"
+                }
+            }
+        }
+    },
+    "rag_cfg": {
+        "class_name": "ddxdriver.rag_agents.searchrag_standard.SearchRAGStandard",
+        "config": {
+            "corpus_name": "PubMed",
+            "top_k_search": 2,
+            "max_keyword_searches": 3,
+            "model": {
+                "class_name": "ddxdriver.models.oai_chat.OpenAIChat",
+                "config": {
+                    "model_name": "gpt-4o"
+                }
+            }
+        }
+    }
+}

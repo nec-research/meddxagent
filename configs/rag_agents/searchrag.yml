@@ -1,0 +1,10 @@
+class_name: "ddxdriver.rag_agents.searchrag_standard.SearchRAGStandard"   
+config:
+  corpus_name: "Wikipedia"        #["PubMed", "Wikipedia"]
+  top_k_search: 2
+  max_keyword_searches: 3
+  # Model hyperparameters
+  model:
+    class_name: ddxdriver.models.oai_chat.OpenAIChat  #["oai_azure_chat.OpenAIAzureChat", "oai_chat.OpenAIChat", "llama3_instruct.Llama3Instruct", "llama31_8b.Llama318B"]
+    config:
+      model_name: "gpt-4o"  # ["gpt-4o", "llama31instruct", "meta-llama/Meta-Llama-3.1-8B-Instruct"]

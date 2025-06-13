@@ -1,0 +1,18 @@
+num_patients: 2                  #So you don't have to run the entire dataset
+enforce_diagnosis_options: True  #[True, False], Default to True! Whether to use diagnosis options in the dataset. Usually, seems necessary for consistent evaluation on the dataset.
+
+
+class_name: "ddxdriver.benchmarks.icraftmd.ICraftMD"          #["ddxplus.DDxPlus", "rarebench.RareBench", "icraftmd.ICraftMD"]
+config:
+  #Note, currently only ran processing for MME as an example, so don't change dataset_subset until processing other datasets
+  # dataset_subset: ["MME", "HMS"]   # Only use for Rarebench. Currently, only "MME" and "HMS" have diagnosis options (dataprocessing.py). Normally, can be subest of ["RAMEDIS","MME","HMS","LIRICAL","PUMCH_ADM",]
+  #Experimental settings
+
+  
+  #knn_search hyperparameters (If "none" fewshot_type, don't need other params. If "standard" fewshot_type, only need num_shots)
+  #Driver specifies random seed
+  knn_search_cfg:
+    embedding_model: "emilyalsentzer/Bio_ClinicalBERT"  # ["BAAI/bge-base-en-v1.5", "emilyalsentzer/Bio_ClinicalBERT"]
+    pooling: "average"                            # ["cls", "average", "max"] CLS established best for BAII, I noticed average may be better for ClinicalBERT
+    order: "similar_at_top"                   # ["similar_at_top", "similar_at_bottom", "random"]
+    precompute_new_embeddings: False          # [True, False], instructs whether to precompute new embeddings

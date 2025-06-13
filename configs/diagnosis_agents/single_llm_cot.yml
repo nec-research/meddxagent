@@ -1,0 +1,12 @@
+class_name: "ddxdriver.diagnosis_agents.single_llm_cot.SingleLLMCOT"    #[single_llm_standard.SingleLLMStandard, single_llm_cot.SingleLLMCOT]
+config:
+  # Model hyperparameters
+  model:
+    class_name: ddxdriver.models.oai_chat.OpenAIChat  #["oai_azure_chat.OpenAIAzureChat", "oai_chat.OpenAIChat", "llama3_instruct.Llama3Instruct", "llama31_8b.Llama318B"]
+    config:
+      model_name: "gpt-4o"  # ["gpt-4o", "llama31instruct", "meta-llama/Meta-Llama-3.1-8B-Instruct"]
+
+  fewshot:
+    type: "dynamic"                   # ["dynamic", "static", "none"]
+    num_shots: 5
+    self_generated_fewshot_cot: True   # [True, False], whether to generate cot for the fewshot examples

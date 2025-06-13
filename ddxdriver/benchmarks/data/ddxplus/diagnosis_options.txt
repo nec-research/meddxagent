@@ -1,0 +1,49 @@
+Acute COPD exacerbation / infection
+Acute dystonic reactions
+Acute laryngitis
+Acute otitis media
+Acute pulmonary edema
+Acute rhinosinusitis
+Allergic sinusitis
+Anaphylaxis
+Anemia
+Atrial fibrillation
+Boerhaave
+Bronchiectasis
+Bronchiolitis
+Bronchitis
+Bronchospasm / acute asthma exacerbation
+Chagas
+Chronic rhinosinusitis
+Cluster headache
+Croup
+Ebola
+Epiglottitis
+GERD
+Guillain-Barré syndrome
+HIV (initial infection)
+Influenza
+Inguinal hernia
+Larygospasm
+Localized edema
+Myasthenia gravis
+Myocarditis
+PSVT
+Pancreatic neoplasm
+Panic attack
+Pericarditis
+Pneumonia
+Possible NSTEMI / STEMI
+Pulmonary embolism
+Pulmonary neoplasm
+SLE
+Sarcoidosis
+Scombroid food poisoning
+Spontaneous pneumothorax
+Spontaneous rib fracture
+Stable angina
+Tuberculosis
+URTI
+Unstable angina
+Viral pharyngitis
+Whooping cough

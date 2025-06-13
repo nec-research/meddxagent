@@ -1,0 +1,262 @@
+
+PATIENT 1
+
+Ground truth pathology: Allergic sinusitis
+
+Patient Profile (inputted):
+Sex: Female, Age: 41
+- I have close family members who suffer from allergies (any type), hay fever, or eczema.
+- I have asthma or have used a bronchodilator in the past.
+- I have severe itching in one or both eyes.
+- I have nasal congestion or a clear runny nose.
+- I have a cough.
+- I am more likely to develop common allergies than the general population.
+
+Setting patient profile to None because history taking agent is available...
+
+
+STEP...Calling ddxdriver.step() for turn number 1...
+
+
+Generating agent prompt...
+Starting history taking...
+
+Conversation goals for history taking:
+1. Ask if the patient is experiencing any other symptoms besides nasal congestion, such as cough, sore throat, or breathing difficulties.
+2. Inquire about the duration and severity of the nasal congestion.
+3. Ask if the patient has any known allergies or history of allergic reactions.
+4. Determine if the patient has a history of sinus infections or rhinosinusitis.
+5. Inquire about any recent exposure to individuals with respiratory infections or flu-like symptoms.
+6. Ask if the patient has experienced any recent changes in their environment, such as exposure to dust, pollen, or other potential allergens.
+7. Inquire about any history of asthma or chronic respiratory conditions.
+8. Ask if the patient has experienced any fever, chills, or body aches.
+9. Determine if the patient has any history of smoking or exposure to secondhand smoke.
+10. Inquire about any recent travel history, particularly to areas with known respiratory disease outbreaks.
+
+Doctor: Are you experiencing any other symptoms besides nasal congestion, such as cough, sore throat, or breathing difficulties?
+
+Patient: Yes, I have a cough and sometimes experience breathing difficulties.
+
+Doctor: How long have you been experiencing the nasal congestion, and how severe is it?
+
+Patient: I've been experiencing the nasal congestion for a while now, and it's quite bothersome.
+
+Doctor: Do you have any known allergies or a history of allergic reactions?
+
+Patient: Yes, I have a history of allergies, and I have close family members who suffer from allergies, hay fever, or eczema.
+
+Doctor: Do you have a history of sinus infections or rhinosinusitis?
+
+Patient: I don't know. However, I do have severe itching in my eyes and a clear runny nose.
+
+Doctor: Have you been exposed to any individuals with respiratory infections or flu-like symptoms recently?
+
+Patient: I don't know.
+
+
+STEP...Calling ddxdriver.step() for turn number 2...
+
+
+Updating Patient Profile...
+
+Updated Patient Profile:
+- Age: 41
+- Sex: F
+- Nasal congestion
+- Cough
+- Breathing difficulties
+- History of allergies
+- Family history of allergies, hay fever, or eczema
+- Severe itching in eyes
+- Clear runny nose
+
+Generating agent prompt...
+Starting RAG...
+
+Input search for RAG:
+Search for information on the following diseases based on the patient's symptoms and history: Allergic sinusitis, Chronic rhinosinusitis, and Bronchospasm / acute asthma exacerbation. Focus on the symptoms, antecedents, and any relevant information that can assist in refining the differential diagnosis. The patient presents with nasal congestion, cough, breathing difficulties, a history of allergies, and severe itching in the eyes, which are indicative of these conditions. 
+
+Please provide detailed information on the symptoms and antecedents of these diseases, ensuring the information is current and relevant to the patient's profile.
+
+Executing keyword searches...
+['Allergic sinusitis symptoms', 'Chronic rhinosinusitis antecedents', 'Bronchospasm acute asthma exacerbation symptoms']
+
+Successfully found search results
+
+Rag content
+**Allergic Sinusitis:**
+Allergic fungal sinusitis (AFS) is a form of chronic rhinosinusitis driven by an allergic response to fungal organisms, primarily affecting individuals with atopic tendencies. It often presents with nasal polyps, which can aid in early diagnosis. Delayed recognition of AFS may lead to recurrent symptoms and require more aggressive interventions. The condition is significant yet frequently underrecognized, and identifying it in patients with nasal polyps is crucial for guiding appropriate management.
+
+**Chronic Rhinosinusitis:**
+Chronic rhinosinusitis (CRS) is associated with disturbances in the microbiome, leading to inflammation. Symptoms include nasal discharge, obstruction, facial pain, impaired sense of smell, and nasal irritation. Olfactory dysfunction is common, with a high prevalence of hyposmia and anosmia among patients. Factors such as nasal polyposis, asthma, septal deviation, turbinate hypertrophy, tobacco use, and allergic rhinitis are predictors of olfactory dysfunction in CRS.
+
+**Bronchospasm / Acute Asthma Exacerbation:**
+Acute asthma exacerbations are characterized by increased airway inflammation and bronchospasm, leading to breathing difficulties. These exacerbations can be life-threatening and require careful management to reduce airway inflammation and reverse bronchospasm. Allergic reactions, including bronchospasm and asthma exacerbation, can occur during medical procedures, although their incidence is low. Understanding the triggers and pathophysiology of asthma exacerbations is essential for improving patient outcomes.
+
+
+STEP...Calling ddxdriver.step() for turn number 3...
+
+
+Generating agent prompt...
+Starting diagnosis...
+
+Diagnosis Instructions:
+1. **Add Allergic sinusitis**: The patient exhibits symptoms such as nasal congestion, clear runny nose, and a history of allergies, which align with allergic sinusitis. The presence of severe itching in the eyes and a family history of allergies further supports this diagnosis.
+
+2. **Add Chronic rhinosinusitis**: The patient's symptoms of nasal congestion, cough, and breathing difficulties, along with a history of allergies, are consistent with chronic rhinosinusitis. The presence of nasal obstruction and potential nasal irritation aligns with the condition's symptomatology.
+
+3. **Prioritize Bronchospasm / acute asthma exacerbation**: The patient's breathing difficulties and history of allergies suggest a possible bronchospasm or asthma exacerbation. Allergic reactions can trigger bronchospasm, making this a likely candidate for prioritization.
+
+4. **Deprioritize Acute rhinosinusitis**: While nasal congestion is present, the chronic nature of the symptoms and the history of allergies make chronic rhinosinusitis and allergic sinusitis more likely than acute rhinosinusitis.
+
+
+Diagnosis User prompt:
+
+Suggested Diagnosis Instructions:
+1. **Add Allergic sinusitis**: The patient exhibits symptoms such as nasal congestion, clear runny nose, and a history of allergies, which align with allergic sinusitis. The presence of severe itching in the eyes and a family history of allergies further supports this diagnosis.
+
+2. **Add Chronic rhinosinusitis**: The patient's symptoms of nasal congestion, cough, and breathing difficulties, along with a history of allergies, are consistent with chronic rhinosinusitis. The presence of nasal obstruction and potential nasal irritation aligns with the condition's symptomatology.
+
+3. **Prioritize Bronchospasm / acute asthma exacerbation**: The patient's breathing difficulties and history of allergies suggest a possible bronchospasm or asthma exacerbation. Allergic reactions can trigger bronchospasm, making this a likely candidate for prioritization.
+
+4. **Deprioritize Acute rhinosinusitis**: While nasal congestion is present, the chronic nature of the symptoms and the history of allergies make chronic rhinosinusitis and allergic sinusitis more likely than acute rhinosinusitis.
+
+
+Here are some other relevant patient examples.
+Example 1 with ground truth pathology: Allergic sinusitis
+
+Patient Profile:
+Sex: Female, Age: 48
+- I have close family members who suffer from allergies (any type), hay fever, or eczema.
+- I have severe itching in one or both eyes.
+- I have nasal congestion or a clear runny nose.
+- I am more likely to develop common allergies than the general population.
+
+Ranked Differential Diagnosis:
+1. Allergic sinusitis
+
+
+Example 2 with ground truth pathology: Allergic sinusitis
+
+Patient Profile:
+Sex: Male, Age: 62
+- I have close family members who suffer from allergies (any type), hay fever, or eczema.
+- I have severe itching in one or both eyes.
+- I have nasal congestion or a clear runny nose.
+- I have a cough.
+- I live in a big city.
+- I am more likely to develop common allergies than the general population.
+
+Ranked Differential Diagnosis:
+1. Bronchitis
+2. URTI
+3. Allergic sinusitis
+
+
+Example 3 with ground truth pathology: Allergic sinusitis
+
+Patient Profile:
+Sex: Female, Age: 90
+- I have close family members who suffer from allergies (any type), hay fever, or eczema.
+- My nose or the back of my throat is itchy.
+- I have severe itching in one or both eyes.
+- I have nasal congestion or a clear runny nose.
+- I have a cough.
+- I live in a big city.
+
+Ranked Differential Diagnosis:
+1. Allergic sinusitis
+2. Bronchitis
+3. URTI
+4. Influenza
+
+
+Example 4 with ground truth pathology: Allergic sinusitis
+
+Patient Profile:
+Sex: Female, Age: 61
+- I have close family members who suffer from allergies (any type), hay fever, or eczema.
+- I have family members who have asthma.
+- I have asthma or have used a bronchodilator in the past.
+- My nose or the back of my throat is itchy.
+- I have severe itching in one or both eyes.
+- I have nasal congestion or a clear runny nose.
+- I have a cough.
+
+Ranked Differential Diagnosis:
+1. Allergic sinusitis
+2. Bronchitis
+3. URTI
+4. Influenza
+
+
+Now it is your turn to provide an updated differential diagnosis for the patient.
+
+Patient Profile:
+- Age: 41
+- Sex: F
+- Nasal congestion
+- Cough
+- Breathing difficulties
+- History of allergies
+- Family history of allergies, hay fever, or eczema
+- Severe itching in eyes
+- Clear runny nose
+
+Ranked Differential Diagnosis:
+
+FIRST DIAGNOSIS Output:
+1. Allergic sinusitis
+2. Bronchospasm / acute asthma exacerbation
+3. Chronic rhinosinusitis
+4. Bronchitis
+5. URTI
+
+
+Adding ddx to ddxdriver.pred_ddxs (ground truth pathology: Allergic sinusitis):
+1. Allergic sinusitis
+2. Bronchospasm / acute asthma exacerbation
+3. Chronic rhinosinusitis
+4. Bronchitis
+5. URTI
+
+Patient example successfully generated, printing results...
+
+Dialogue history
+Doctor: Are you experiencing any other symptoms besides nasal congestion, such as cough, sore throat, or breathing difficulties?
+Patient: Yes, I have a cough and sometimes experience breathing difficulties.
+Doctor: How long have you been experiencing the nasal congestion, and how severe is it?
+Patient: I've been experiencing the nasal congestion for a while now, and it's quite bothersome.
+Doctor: Do you have any known allergies or a history of allergic reactions?
+Patient: Yes, I have a history of allergies, and I have close family members who suffer from allergies, hay fever, or eczema.
+Doctor: Do you have a history of sinus infections or rhinosinusitis?
+Patient: I don't know. However, I do have severe itching in my eyes and a clear runny nose.
+Doctor: Have you been exposed to any individuals with respiratory infections or flu-like symptoms recently?
+Patient: I don't know.
+
+
+Final rag content
+**Allergic Sinusitis:**
+Allergic fungal sinusitis (AFS) is a form of chronic rhinosinusitis driven by an allergic response to fungal organisms, primarily affecting individuals with atopic tendencies. It often presents with nasal polyps, which can aid in early diagnosis. Delayed recognition of AFS may lead to recurrent symptoms and require more aggressive interventions. The condition is significant yet frequently underrecognized, and identifying it in patients with nasal polyps is crucial for guiding appropriate management.
+
+**Chronic Rhinosinusitis:**
+Chronic rhinosinusitis (CRS) is associated with disturbances in the microbiome, leading to inflammation. Symptoms include nasal discharge, obstruction, facial pain, impaired sense of smell, and nasal irritation. Olfactory dysfunction is common, with a high prevalence of hyposmia and anosmia among patients. Factors such as nasal polyposis, asthma, septal deviation, turbinate hypertrophy, tobacco use, and allergic rhinitis are predictors of olfactory dysfunction in CRS.
+
+**Bronchospasm / Acute Asthma Exacerbation:**
+Acute asthma exacerbations are characterized by increased airway inflammation and bronchospasm, leading to breathing difficulties. These exacerbations can be life-threatening and require careful management to reduce airway inflammation and reverse bronchospasm. Allergic reactions, including bronchospasm and asthma exacerbation, can occur during medical procedures, although their incidence is low. Understanding the triggers and pathophysiology of asthma exacerbations is essential for improving patient outcomes.
+
+Ground truth pathology:
+Allergic sinusitis
+
+Ground truth ddx:
+1. Bronchitis
+2. URTI
+3. Allergic sinusitis
+
+Final Ranked Differential Diagnosis:
+1. Allergic sinusitis
+2. Bronchospasm / acute asthma exacerbation
+3. Chronic rhinosinusitis
+4. Bronchitis
+5. URTI
+

@@ -1,0 +1,57 @@
+[build-system]
+requires = [
+    "setuptools>=65.6.3",
+    "wheel>=0.40.0"
+]
+build-backend = "setuptools.build_meta"
+
+
+[project]
+name = "meddxagent"
+description = "A Unified Modular Agent Framework for Explainable Automatic Differential Diagnosis"
+readme = "README.md"
+requires-python = ">=3.12"
+version = "1.0"
+dependencies = [
+    "datasets>=2.20.0",
+    "python-dotenv>=1.0.0",
+    "faiss-cpu>=1.8.0.post1",
+    "langchain-openai>=0.1.17",
+    "numpy>=1.26.4",
+    "openai>=1.37.0",
+    "pandas>=2.2.2",
+    "PyYAML>=6.0.1",
+    "transformers>=4.43.1",
+    "colorama>=0.4.6",
+    "accelerate>=0.26.0",
+    "biopython>=1.85.0",
+    "bs4>=0.0.2",
+    "tornado>=6.4.2",
+    "bitsandbytes>=0.45.1",
+    "sentence-transformers>=2.2.2",
+    "wikipedia>=1.4.0",
+    "wikipedia-api>=0.6.0",
+    "requests>=2.32.0",
+    "regex>=2024.5.0",
+    "tqdm>=4.66.0",
+    "safetensors>=0.4.3",
+    "sentencepiece>=0.2.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pre-commit",
+    "pytest",
+]
+
+
+[tool.setuptools]
+packages = [
+    "ddxdriver",
+]
+
+[tool.black]
+line-length = 100
+
+[tool.isort]
+profile = "black"
